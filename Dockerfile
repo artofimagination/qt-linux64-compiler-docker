@@ -15,7 +15,7 @@ RUN apt-get install -y libgtest-dev && cd /usr/src/gtest && cmake CMakeLists.txt
  ln -s /usr/lib/libgtest.a /usr/local/lib/gtest/libgtest.a && \
  ln -s /usr/lib/libgtest_main.a /usr/local/lib/gtest/libgtest_main.a
 
-RUN curl -O -L https://download.qt.io/archive/qt/5.12/5.12.8/qt-opensource-linux-x64-5.12.8.run && chmod 0711 qt-opensource-linux-x64-5.12.8.run && ./qt-opensource-linux-x64-5.12.8.run
+RUN curl -O -L https://download.qt.io/archive/qt/5.12/5.12.8/qt-opensource-linux-x64-5.12.8.run && chmod 0711 qt-opensource-linux-x64-5.12.8.run && ./qt-opensource-linux-x64-5.12.8.run --script qt-installer-noninteractive.qs --platform minimal --verbose
 
 # Manual download and copy speeds up the building of docker image. Curl is very slow to grab it everytime when the image is built.
 #COPY ./qt-opensource-linux-x64-5.12.8.run .
